@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>D&D Express</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icon-192.png">
+  <link rel="apple-touch-icon" href="icon-192.png">
+  <meta name="theme-color" content="#0c0c0c">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Меню -->
+    <div id="menu" class="screen active">
+      <h1>⚔️ D&D Express</h1>
+      <div id="menuContent"></div>
+    </div>
+    
+    <!-- Создание персонажа -->
+    <div id="charCreate" class="screen"></div>
+    
+    <!-- Игра -->
+    <div id="game" class="screen"></div>
+  </div>
+
+  <!-- Попап кубика -->
+  <div class="dice-overlay" id="diceOverlay">
+    <div class="dice-popup">
+      <div class="dice-title">Проверка</div>
+      <div class="dice-skill" id="diceSkill">DEX</div>
+      <div class="dice-display" id="diceDisplay">🎲</div>
+      <div class="dice-breakdown" id="diceBreakdown"></div>
+      <div class="dice-target" id="diceTarget"></div>
+      <div class="dice-result" id="diceResult"></div>
+    </div>
+  </div>
+
+  <script src="engine.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js');
+    }
+
+    const adventures = [
+      {id: "jailbreak", title: "🔓 Побег из тюрьмы «Чёрный Клык»"},
+      {id: "casino", title: "🎰 Ограбление казино «Золотой Клык»"}
+    ];
+
+    Engine.initMenu(adventures);
+  </script>
+</body>
+</html>
