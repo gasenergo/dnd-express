@@ -360,7 +360,7 @@ const Engine = {
     if (this.currentStep === 1) {
       html += `
         <div class="step active">
-          <h2>⚔️ Как тебя зовут?</h2>
+          <h2>⚔️ Кто ты воин?</h2>
           <h3>Введи имя героя</h3>
           <input type="text" class="name-input" id="nameInput" 
                  placeholder="Имя..." value="${this.tempChar.name}"
@@ -378,9 +378,11 @@ const Engine = {
               <div class="choice-card ${this.tempChar.race?.id === r.id ? 'selected' : ''}" data-race="${r.id}">
                 <img src="images/races/${r.id}.png" alt="${r.name}" 
                      onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect fill=%22%23333%22 width=%22100%22 height=%22100%22/><text x=%2250%22 y=%2260%22 text-anchor=%22middle%22 fill=%22%23666%22 font-size=%2250%22>?</text></svg>'">
-                <div class="name">${r.name}</div>
-                <div class="desc">${r.desc}</div>
-                <div class="race-stats">⚔️${r.stats.str} 🏃${r.stats.dex} 💬${r.stats.cha}</div>
+                <div class="choice-card-info">
+                     <div class="name">${r.name}</div>
+                     <div class="desc">${r.desc}</div>
+                     <div class="race-stats">⚔️${r.stats.str} 🏃${r.stats.dex} 💬${r.stats.cha}</div>
+                </div>
               </div>
             `).join('')}
           </div>
@@ -402,9 +404,11 @@ const Engine = {
                 <div class="choice-card ${this.tempChar.cls?.id === c.id ? 'selected' : ''}" data-class="${c.id}">
                   <img src="images/classes/${this.tempChar.race.id}-${c.id}.png" alt="${c.name}" 
                        onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect fill=%22%23333%22 width=%22100%22 height=%22100%22/><text x=%2250%22 y=%2260%22 text-anchor=%22middle%22 fill=%22%23666%22 font-size=%2250%22>?</text></svg>'">
-                  <div class="name">${c.name}</div>
-                  <div class="desc">${c.desc}</div>
-                  <div class="class-stats">⚔️${previewStr} 🏃${previewDex} 💬${previewCha} ❤️${c.hp}</div>
+                  <div class="choice-card-info">
+                       <div class="name">${c.name}</div>
+                       <div class="desc">${c.desc}</div>
+                       <div class="class-stats">⚔️${previewStr} 🏃${previewDex} 💬${previewCha} ❤️${c.hp}</div>
+                  </div>
                 </div>
               `;
             }).join('')}
