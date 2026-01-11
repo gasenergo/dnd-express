@@ -51,7 +51,7 @@ body {
   }
   
   .container {
-    max-width: 480px;
+    max-width: 600px;
     height: 800px;
     max-height: 90vh;
     border-radius: 20px;
@@ -298,19 +298,18 @@ button.adventure-btn {
   background: #222;
   border: 3px solid var(--border);
   border-radius: 14px;
-  padding: 12px;
+  padding: 5px;
   cursor: pointer;
   transition: all 0.2s;
-  text-align: center;
   display: flex;
   flex-direction: row;
   align-items: center;
-  min-height: 280px;
+  gap: 15px;
 }
 
 .choice-card:hover {
   border-color: #888;
-  transform: translateY(5px);
+  transform: translateX(5px);
   box-shadow: 0 6px 15px rgba(0,0,0,0.5);
 }
 
@@ -335,36 +334,33 @@ button.adventure-btn {
 }
 
 .choice-card .name {
-  margin-top: 10px;
-  font-size: 1em;
+  margin-bottom: 4px;
+  font-size: 1.1em;
   color: var(--gold);
   font-weight: bold;
 }
 
 .choice-card .desc {
-  font-size: 0.8em;
+  font-size: 0.85em;
   color: var(--text-muted);
-  margin-top: 4px;
+  margin-bottom: 4px;
   line-height: 1.3;
-  flex: 1;
 }
 
 .choice-card .race-stats,
 .choice-card .class-stats {
-  font-size: 0.75em;
+  font-size: 0.8em;
   color: #4a9;
-  margin-top: auto;
   padding-top: 6px;
   border-top: 1px solid #333;
-  width: 100%;
 }
 
-/* Маленькие экраны — карточки уже */
-@media (max-width: 360px) {
+/* На больших экранах — 3 колонки */
+@media (min-width: 500px) {
   .choice-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 6px;
+    gap: 2px;
   }
   
   .choice-card {
@@ -373,17 +369,13 @@ button.adventure-btn {
     min-height: 200px;
   }
   
+  .choice-card:hover {
+    transform: translateY(-5px);
+  }
+
   .choice-card img {
-    width: 80px;
-    height: 80px;
-  }
-  
-  .choice-card .name {
-    font-size: 0.85em;
-  }
-  
-  .choice-card .desc {
-    font-size: 0.7em;
+    width: 150px;
+    height: 150px;
   }
 
   .choice-card .race-stats,

@@ -33,14 +33,14 @@ const Engine = {
     { 
       id: "elf", 
       name: "Эльф", 
-      desc: "Ловкий и мудрый", 
-      stats: { str: 8, dex: 14, cha: 10 }
+      desc: "Ловкий от природы", 
+      stats: { str: 8, dex: 14, cha: 8 }
     },
     { 
       id: "tiefling", 
       name: "Тифлинг", 
       desc: "Харизматичный", 
-      stats: { str: 10, dex: 10, cha: 14 }
+      stats: { str: 12, dex: 6, cha: 12 }
     }
   ],
   
@@ -67,7 +67,7 @@ const Engine = {
       name: "Бард", 
       desc: "Музыка и магия", 
       hp: 10, 
-      statBonus: { str: 0, dex: 2, cha: 4 }
+      statBonus: { str: 0, dex: 2, cha: 2 }
     }
   ],
   
