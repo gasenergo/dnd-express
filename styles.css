@@ -474,7 +474,7 @@ button.adventure-btn {
 /* ========== КАРТОЧКА ГЕРОЯ ========== */
 .hero-card {
   position: absolute;
-  top: calc(300px - 85px);
+  top: calc(300px - 5px);
   left: 10px;
   right: 10px;
   background: var(--card-bg);
@@ -492,7 +492,7 @@ button.adventure-btn {
 
 @media (max-width: 480px) {
   .hero-card {
-    top: calc(250px - 85px);
+    top: calc(250px - 5px);
     padding: 8px 10px;
     gap: 10px;
     grid-template-columns: 50px 1fr 45px;
@@ -659,6 +659,7 @@ button.adventure-btn {
   flex: 1;
   overflow-y: auto;
   margin-bottom: 8px;
+  margin-top: 50px;
 }
 
 .scroll {
